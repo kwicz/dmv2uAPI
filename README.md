@@ -67,14 +67,17 @@ GET api/v1/plates?{parameters}
 | string | string |  |
 
 #### Example Queries
+To search by IDs:
 ```sh
-https://localhost:5000/api/parks/?name=Epicodus&location=Portland&dateEstablished=January%201%2C%202010
+https://localhost:5000/api/v1/plates?id={id}
 ```
-
-
-## Known Bugs
-
-_No known bugs at this time._
+To search by status:
+```sh
+https://localhost:5000/api/v1/plates?status={status}
+```
+```sh
+https://localhost:5000/api/v1/plates?string=KWICZ
+```
 
 ## Support and contact details
 
