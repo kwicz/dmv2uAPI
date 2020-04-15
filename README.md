@@ -61,9 +61,9 @@ GET api/v1/plates?{parameters}
 | Parameter | Type | Description |
 | :---: | :---: | --- |
 | id | integer | Returns match by ID.
-| date | string |   |
+| date | YYYY-MM-DD |   |
 | prev_date | string |  |
-| status | string |  |
+| status | string | "Assigned", "Available", or "Restricted"  |
 | string | string |  |
 
 #### Example Queries
@@ -76,7 +76,7 @@ To search by status:
 https://localhost:5000/api/v1/plates?status={status}
 ```
 ```sh
-https://localhost:5000/api/v1/plates?string=KWICZ
+https://localhost:5000/api/v1/plates?string={string}
 ```
 
 ## Support and contact details

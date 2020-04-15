@@ -32,8 +32,8 @@ def api_all():
 	conn.row_factory = dict_factory
 	cur = conn.cursor()
 	all_plates = cur.execute('SELECT * FROM dmv2u;').fetchall()
-	# print("~~~~~~~~~" + all_plates[0] + "~~~~~~~~~~~")
 	return jsonify(all_plates)
+
 
 @app.route('/api/v1/plates', methods=['GET'])
 def api_filter():
@@ -63,15 +63,19 @@ def api_filter():
 	if string:
 		query += ' string=? AND'
 		to_filter.append(string)
+	# if not (id or date or prev_date or status or string):
+  #       return page_not_found(404)
 
-	query = query + ';'
+	query = query[:-4] + ';'
+
+	print("~~~~~~~~~~~" + query + "~~~~~~~~~~~~~")
 
 	conn = sqlite3.connect('dmv2u.sqlite')
 	conn.row_factory = dict_factory
-	cur = conn.cursor
+	cur = conn.cursor()
 
 	results = cur.execute(query, to_filter).fetchall()
 
-	return "<h1>Here are your results: </h1>" + jsonify(results)
+	return jsonify(results)
 
 app.run()
