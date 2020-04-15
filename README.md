@@ -5,7 +5,7 @@
 
 ## Description
 
-_A Python/Flask program that serves up data from the DMV2U database._
+_A Python/Flask program that serves up data from the DMV2U database.  Created as an open source contribution to the [Oregon Plates](https://twitter.com/oregonplates) project._
 
 
 ## Setup/Installation Requirements
@@ -87,6 +87,7 @@ _Have a bug or an issue with this application? [Open a new issue](https://github
 * _Python 3.8.1_
 * _Flask_
 * _SQLite_
+* _Database provided by [Oregon Plates](https://twitter.com/oregonplates)
 
 ## License
 
