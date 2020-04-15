@@ -58,26 +58,17 @@ GET api/v1/plates/all
 GET api/v1/plates?{parameters}
 ```
 #### Path Parameters
-| Parameter | Type | Description |
-| :---: | :---: | --- |
-| id | integer | Returns match by ID.
-| date | YYYY-MM-DD |   |
+| Parameter | Type | Description | Query Example |
+| :---: | :---: | --- | :---: |
+| id | integer | Returns match by ID. |`https://localhost:5000/api/v1/plates?id={id}`|
+| date | YYYY-MM-DD ||`https://localhost:5000/api/v1/plates?status={status}`|
 | prev_date | string |  |
-| status | string | "Assigned", "Available", or "Restricted"  |
-| string | string |  |
+| status | string | "Assigned", "Available", or "Restricted"  |`https://localhost:5000/api/v1/plates?status={status}`|
+| string | string |  |`https://localhost:5000/api/v1/plates?string={string}`|
 
 #### Example Queries
-To search by IDs:
-```sh
-https://localhost:5000/api/v1/plates?id={id}
-```
-To search by status:
-```sh
-https://localhost:5000/api/v1/plates?status={status}
-```
-```sh
-https://localhost:5000/api/v1/plates?string={string}
-```
+
+
 
 ## Support and contact details
 
