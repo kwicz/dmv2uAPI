@@ -40,10 +40,15 @@ def api_filter():
 	query_parameters = request.args
 	id = query_parameters.get('id')
 	date = query_parameters.get('date')
-	prev_date = query_parameters.get('prev_date')
-	prev_status = query_parameters.get('prev_status')
-	status = query_parameters.get('status')
-	string = query_parameters.get('string')
+  string = query_parameters.get('string')
+  status = query_parameters.get('status')
+  make = query_parameters.get('make')
+  model = query_parameters.get('model')
+  year = query_parameters.get('year')
+  prev_date = query_parameters.get('prev_date')
+  prev_make = query_parameters.get('prev_make')
+  prev_model = query_parameters.get('prev_model')
+  prev_year = query_parameters.get('prev_year')	
 
 	query = "SELECT * FROM dmv2u WHERE"
 	to_filter = []
@@ -54,17 +59,35 @@ def api_filter():
 	if date:
 		query += ' date=? AND'
 		to_filter.append(date)
-	if prev_date:
-		query += ' prev_date=? AND'
-		to_filter.append(prev_date)
-	if status:
-		query += ' status=? AND'
-		to_filter.append(status)
 	if string:
 		query += ' string=? AND'
 		to_filter.append(string)
-	# if not (id or date or prev_date or status or string):
-  #       return page_not_found(404)
+	if status:
+		query += ' status=? AND'
+		to_filter.append(status)
+	if make:
+		query += ' make=? AND'
+		to_filter.append(make)
+	if model:
+		query += ' model=? AND'
+		to_filter.append(model)
+	if year:
+		query += ' year=? AND'
+		to_filter.append(year)
+	if prev_date:
+		query += ' prev_date=? AND'
+		to_filter.append(prev_date)
+	if prev_make:
+		query += ' prev_make=? AND'
+		to_filter.append(prev_make)
+	if prev_model:
+		query += ' prev_model=? AND'
+		to_filter.append(prev_model)
+	if prev_year:
+		query += ' prev_year=? AND'
+		to_filter.append(prev_year)
+	if not (id or date or prev_date or status or string):
+        return page_not_found(404)
 
 	query = query[:-4] + ';'
 

@@ -60,11 +60,18 @@ GET api/v1/plates?{parameters}
 #### Path Parameters
 | Parameter | Type | Description | Query Example |
 | :---: | :---: | --- | :---: |
-| id | integer | Returns match by ID. |`https://localhost:5000/api/v1/plates?id={id}`|
-| date | YYYY-MM-DD ||`https://localhost:5000/api/v1/plates?status={status}`|
-| prev_date | string |  |
-| status | string | "Assigned", "Available", or "Restricted"  |`https://localhost:5000/api/v1/plates?status={status}`|
-| string | string |  |`https://localhost:5000/api/v1/plates?string={string}`|
+| ID | integer | Returns match by ID. |`https://localhost:5000/api/v1/plates?id={id}`|
+| DATE | YYYY-MM-DD ||`https://localhost:5000/api/v1/plates?date=2020-04-14`|
+| STRING | string |Search by the string on the license plate.|`https://localhost:5000/api/v1/plates?string={string}`|
+| STATUS | string |"Assigned", "Available", or "Restricted"|`https://localhost:5000/api/v1/plates?status=Restricted`|
+| MAKE | string |Returns make of current vehicle with specified plate.||
+| MODEL | string |Returns model of current vehicle with specified plate.||
+| YEAR | YYYY|Returns year of current vehicle with specified plate.||
+| PREV_DATE | string |||
+| PREV_MAKE | string |Returns make of previous vehicle with specified plate.||
+| PREV_MODEL | string |Returns model of previous vehicle with specified plate.||
+| PREV_YEAR | YYYY |Returns year of previous vehicle with specified plate.||
+
 
 #### Example Queries
 
