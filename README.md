@@ -60,21 +60,24 @@ GET api/v1/plates?{parameters}
 #### Path Parameters
 | Parameter | Type | Description | Query Example |
 | :---: | :---: | --- | :---: |
-| ID | integer | Returns match by ID. |`https://localhost:5000/api/v1/plates?id={id}`|
+| ID | integer |Plate ID in Database.|`https://localhost:5000/api/v1/plates?id={id}`|
 | DATE | YYYY-MM-DD ||`https://localhost:5000/api/v1/plates?date=2020-04-14`|
 | STRING | string |Search by the string on the license plate.|`https://localhost:5000/api/v1/plates?string={string}`|
 | STATUS | string |"Assigned", "Available", or "Restricted"|`https://localhost:5000/api/v1/plates?status=Restricted`|
-| MAKE | string |Returns make of current vehicle with specified plate.||
-| MODEL | string |Returns model of current vehicle with specified plate.||
-| YEAR | YYYY|Returns year of current vehicle with specified plate.||
+| MAKE | string |Returns make of current vehicle with specified plate.|`https://localhost:5000/api/v1/plates?make=Subaru`|
+| MODEL | string |Returns model of current vehicle with specified plate.|`https://localhost:5000/api/v1/plates?model=Outback`|
+| YEAR | YYYY|Returns year of current vehicle with specified plate.|`https://localhost:5000/api/v1/plates?year=2020`|
 | PREV_DATE | string |||
-| PREV_MAKE | string |Returns make of previous vehicle with specified plate.||
-| PREV_MODEL | string |Returns model of previous vehicle with specified plate.||
-| PREV_YEAR | YYYY |Returns year of previous vehicle with specified plate.||
+| PREV_MAKE | string |Returns make of previous vehicle with specified plate.|`https://localhost:5000/api/v1/plates?prev_make=Subaru`|
+| PREV_MODEL | string |Returns model of previous vehicle with specified plate.|`https://localhost:5000/api/v1/plates?prev_model=Outback`|
+| PREV_YEAR | YYYY |Returns year of previous vehicle with specified plate.|`https://localhost:5000/api/v1/plates?prev_year=2020`|
 
 
-#### Example Queries
+#### Example Query with Multiple Parameters
 
+```sh
+http://127.0.0.1:5000/api/v1/plates?id=23987&string=DMV&status=Available
+```
 
 
 ## Support and contact details
